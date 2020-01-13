@@ -18,6 +18,8 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.xux.generator.mybatisplus.config.DataSource;
+import com.xux.generator.mybatisplus.config.Global;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,30 +42,20 @@ public class OriginalTool {
     }
 
     public static void generator() {
+
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
 
         // 全局配置
-        GlobalConfig globalConfig = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir");
-        globalConfig.setOutputDir(projectPath + "/mybatis-plus-sample-generator/src/main/java");
-        globalConfig.setAuthor("jobob");
-        globalConfig.setOpen(false);
-        mpg.setGlobalConfig(globalConfig);
+        mpg.setGlobalConfig(Global.getGlobalConfig());
 
         // 数据源配置
-        DataSourceConfig dataSourceConfig = new DataSourceConfig();
-        dataSourceConfig.setUrl("jdbc:mysql://localhost:3306/ant?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8");
-        // dataSourceConfig.setSchemaName("public");
-        dataSourceConfig.setDriverName("com.mysql.jdbc.Driver");
-        dataSourceConfig.setUsername("root");
-        dataSourceConfig.setPassword("1q2w3e4r");
-        mpg.setDataSource(dataSourceConfig);
+        mpg.setDataSource(DataSource.getDataSource());
 
         // 包配置
         PackageConfig packageConfig = new PackageConfig();
         packageConfig.setModuleName(scanner("模块名"));
-        packageConfig.setParent("com.baomidou.mybatisplus.samples.generator");
+        packageConfig.setParent(Global.getParentPackage());
         mpg.setPackageInfo(packageConfig);
 
         // 自定义配置
@@ -78,7 +70,7 @@ public class OriginalTool {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输入文件名称
-                return projectPath + "/mybatis-plus-sample-generator/src/main/resources/mapper/" + packageConfig.getModuleName()
+                return Global.getMapperDir() + packageConfig.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -90,10 +82,10 @@ public class OriginalTool {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.baomidou.mybatisplus.samples.generator.common.BaseEntity");
+        strategy.setSuperEntityClass("");
         strategy.setEntityLombokModel(true);
-        strategy.setSuperControllerClass("com.baomidou.mybatisplus.samples.generator.common.BaseController");
-        strategy.setInclude(scanner("表名"));
+        strategy.setSuperControllerClass("");
+        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(packageConfig.getModuleName() + "_");

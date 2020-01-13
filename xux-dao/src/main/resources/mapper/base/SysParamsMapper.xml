@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xux.dao.base.mapper.SysParamsMapper">
+    <resultMap id="BaseResultMap" type="com.xux.dao.base.entity.SysParams">
+        <id column="NAME" jdbcType="VARCHAR" property="name" />
+        <result column="LANG" jdbcType="VARCHAR" property="lang" />
+        <result column="VALUE" jdbcType="VARCHAR" property="value" />
+        <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    </resultMap>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from sys_params
+        where NAME = #{name,jdbcType=VARCHAR}
+    </select>
+</mapper>

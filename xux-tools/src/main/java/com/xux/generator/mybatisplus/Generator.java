@@ -9,15 +9,16 @@
  */
 package com.xux.generator.mybatisplus;
 
+import com.xux.generator.mybatisplus.tool.CustomizeTool;
 import com.xux.generator.mybatisplus.tool.OriginalTool;
 
 public class Generator {
 
-    public void main(String[] args){
+    public static void main(String[] args){
         // 原始方法
         OriginalTool.generator();
 
         // 自定义方法
-        // CustomizeTool.generator();
+//         CustomizeTool.generator();
     }
 }

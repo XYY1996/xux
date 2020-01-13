@@ -7,7 +7,6 @@
 	<artifactId>xux-parent</artifactId>
 	<groupId>com.xux</groupId>
 	<version>1.0-SNAPSHOT</version>
-	<relativePath>../xux-parent/pom.xml</relativePath>
   </parent>
 
   <groupId>com.xux</groupId>

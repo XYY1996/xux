@@ -1,0 +1,7 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.21.19.72:3309/base?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&socketTimeout=60000
+    username: imcdev
+    password: migu123456

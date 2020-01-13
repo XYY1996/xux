@@ -25,27 +25,27 @@ public class CustomizeTool {
     /**
      * 包名
      */
-    private static final String PACKAGE_NAME = "cn.lqdev.learning.mybatisplus.samples";
+    private static final String PACKAGE_NAME = "com.xux.common";
     /**
      * 模块名称
      */
-    private static final String MODULE_NAME = "biz";
+    private static final String MODULE_NAME = "xux-common";
     /**
      * 输出文件的路径
      */
-    private static final String OUT_PATH = "D:\\develop\\code";
+    private static final String OUT_PATH = "D:\\project\\xux\\xux\\xux-common";
     /**
      * 代码生成者
      */
-    private static final String AUTHOR = "oKong";
+    private static final String AUTHOR = "xuyy";
 
     /**
      * JDBC相关配置
      */
-    private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/learning?useUnicode=true&characterEncoding=UTF-8";
-    private static final String USER_NAME = "root";
-    private static final String PASSWORD = "bs";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://10.21.19.72:3309/base?useUnicode=true&characterEncoding=UTF-8&socketTimeout=60000";
+    private static final String USER_NAME = "imcdev";
+    private static final String PASSWORD = "migu123456";
 
     public static void generator() {
         // 自定义需要填充的字段
