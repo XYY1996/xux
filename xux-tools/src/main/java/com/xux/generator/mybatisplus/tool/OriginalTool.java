@@ -18,7 +18,6 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import com.xux.generator.mybatisplus.config.DataSource;
 import com.xux.generator.mybatisplus.config.Global;
 
 import java.util.ArrayList;
@@ -50,7 +49,7 @@ public class OriginalTool {
         mpg.setGlobalConfig(Global.getGlobalConfig());
 
         // 数据源配置
-        mpg.setDataSource(DataSource.getDataSource());
+        mpg.setDataSource(Global.getDataSource());
 
         // 包配置
         PackageConfig packageConfig = new PackageConfig();
