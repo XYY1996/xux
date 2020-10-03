@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 public class TestFastDFS {
 
@@ -52,8 +53,12 @@ public class TestFastDFS {
 
 
     public static StorageClient1 getStorageClient1() throws IOException, MyException {
+        String confName = "fdfs_client.conf";
+        ClassLoader loader = TestFastDFS.class.getClassLoader();
+        // 先从当前类所处路径的根目录中寻找属性文件
+        URL url = loader.getResource(confName);
         //1. 加载配置文件
-        ClientGlobal.init("D:\\fdfs_client.conf");
+        ClientGlobal.init(url.getPath());
         //2. 创建管理端对象
         TrackerClient trackerClient = new TrackerClient();
         //3. 获取连接
