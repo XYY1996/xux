@@ -7,12 +7,14 @@
   <groupId>com.xux</groupId>
   <artifactId>xux-parent</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging><!--修改打包方式-->
+
     <modules>
         <module>cola4-template-web-offical</module>
         <module>cola4-template-service-offical</module>
         <module>imc-template-web</module>
     </modules>
-    <packaging>pom</packaging><!--修改打包方式-->
+
 
   <parent>
      <groupId>org.springframework.boot</groupId>
