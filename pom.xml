@@ -10,7 +10,6 @@
   <packaging>pom</packaging><!--修改打包方式-->
 
     <modules>
-        <module>cola4-template-web-offical</module>
         <module>imc-template-web</module>
     </modules>
 
