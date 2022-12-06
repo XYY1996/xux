@@ -8,9 +8,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cola4-template-web-offical</artifactId>
+    <artifactId>cola4-template-web</artifactId>
     <packaging>pom</packaging>
-    <name>cola4-template-web-offical</name>
+    <name>cola4-template-web</name>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
