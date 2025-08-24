@@ -1,2 +1,0 @@
-# xux
-xux Base Project
